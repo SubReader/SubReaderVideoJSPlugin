@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TheoPlayer SubReader Test</title>
+  <link href="https://vjs.zencdn.net/6.9.0/video-js.css" rel="stylesheet">
+  <link href="subreader-plugin.css" rel="stylesheet">
+</head>
+
+<body>
+  <video id="video" class="video-js" controls preload="auto" width="640" height="264">
+    <source src="http://movietrailers.apple.com/movies/wb/real-player-one/ready-player-one-trailer-3_i320.m4v" type='video/mp4'>
+    <track src="da.vtt" label="Dansk" srclang="da" default kind="subtitles" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser that
+      <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p>
+  </video>
+  <script src="https://vjs.zencdn.net/6.10.1/video.js"></script>
+  <script src="subreader-plugin.js"></script>
+  <script>
+    const videoNode = document.getElementById("video");
+    this.player = videojs(videoNode, {
+      plugins: {
+        subreader: {}
+      }
+    });
+  </script>
+</body>
+
+</html>
